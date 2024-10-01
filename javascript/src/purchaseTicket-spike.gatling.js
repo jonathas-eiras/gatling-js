@@ -12,7 +12,7 @@ import { http, status } from "@gatling.io/http";
 import { faker } from "@faker-js/faker";
 
 let user = {
-  name: faker.person.firstName() + faker.person.lastName(),
+  name: faker.person.firstName() + " " + faker.person.lastName(),
   address: faker.location.streetAddress(),
   city: faker.location.city(),
   state: faker.location.state(),
@@ -32,7 +32,7 @@ export default simulation((setUp) => {
   const purchaseTicket = exec(
     http("purchase-spike")
       .post("/purchase.php")
-      .body(StringBody(user.toString()))
+      .body(StringBody(JSON.stringify(user)))
       .asJson()
       .check(status().is(200)),
   );

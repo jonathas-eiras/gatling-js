@@ -30,7 +30,7 @@ jobs:
         run: |
           cd ./javascript
           npm run build
-          node /src/purchaseTicket-load.gatling.js
+          node ./javascript/src/purchaseTicket-load.gatling.js
 
       - name: Archive Gatling results
         if: success() || failure()

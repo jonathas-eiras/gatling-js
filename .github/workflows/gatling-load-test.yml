@@ -29,8 +29,7 @@ jobs:
       - name: Run Gatling load test
         run: |
           cd ./javascript
-          npm run build
-          node ./src/purchaseTicket-load.gatling.js
+          npx gatling run --simulation purchaseTicket-load
 
       - name: Archive Gatling results
         if: always()

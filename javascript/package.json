@@ -9,10 +9,10 @@
     "@gatling.io/http": "3.12.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^9.0.3",
+    "@faker-js/faker": "8.4.1",
     "@gatling.io/cli": "3.12.0",
     "prettier": "3.3.3",
-    "rimraf": "6.0.1"
+    "rimraf": "5.0.10"
   },
   "scripts": {
     "clean": "rimraf target",

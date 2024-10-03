@@ -28,7 +28,7 @@ Pré-requisitos instalados antes de executar os testes:
 - [Node.js](https://nodejs.org/en) v18 ou posterior (somente versões LTS) e npm v8 ou posterior.
 
 
-## Instruções para Execução
+## Instruções para Execução em ambiente Local
 
 Abra o terminal e navegue para a pasta `/javascript`
 
@@ -54,12 +54,23 @@ Para rodar o script do teste de Pico, execute o seguinte comando:
 npx gatling run --simulation purchaseTicket-spike
 ```
 
+
+## Instruções para Execução com Pipeline no Actions do Github
+
+Clique na aba Actions, ao lado da aba Code e selecione o Workflow "Gatling Load Test"
+
+<img width="890" alt="image" src="https://github.com/user-attachments/assets/ff29ff0e-8346-416e-949c-5bd35d617311">
+
+Clique no botão "Run workflow" e depois no em "Run workflow" novamente.
+![image](https://github.com/user-attachments/assets/b9d2c942-c319-4386-994d-2da9ecfc9110)
+
+
 Relatório de Execução dos Testes
 --------------------------------
 
 Após a execução dos testes, o Gatling gera um relatório HTML detalhado que pode ser visualizado no navegador.
 
-**Acessar o Relatório**:
+**Acessar o Relatório em ambiente local**:
     
 * O relatório será gerado automaticamente no diretório javascript/target/gatling/jssimulation-<timestamp>/index.html.
 
@@ -70,7 +81,15 @@ Após a execução dos testes, o Gatling gera um relatório HTML detalhado que p
     * Percentuais de resposta (50%, 90%, 99%)
     * Número de requisições por segundo
     * Taxa de sucesso/falha de requisições
-        
+
+**Acessar o Relatório na pipeline**:
+
+* O relatório pode ser acessado na página da execução.
+* Após a execução, procure a seção Artifacts (localizada no final da página).
+  <img width="923" alt="image" src="https://github.com/user-attachments/assets/c30dcc5e-c75c-4b91-8de8-bf0be6b20796">
+
+* Clique em gatling-results para baixar os arquivos de relatório.
+* Você pode extrair o arquivo e abrir o index.html no navegador para visualizar o relatório detalhado da execução do teste.
 
 ### Análise dos Resultados
 

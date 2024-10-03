@@ -1,0 +1,43 @@
+name: Gatling Load Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Gatling load test
+        run: |
+          npm run build
+          node ./javascript/purchaseTicket-load.js
+
+      - name: Archive Gatling results
+        if: success() || failure()
+        run: |
+          mkdir -p reports
+          cp -R results/ reports/
+        continue-on-error: true
+
+      - name: Upload reports
+        uses: actions/upload-artifact@v3
+        with:
+          name: gatling-results
+          path: reports

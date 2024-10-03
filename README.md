@@ -18,6 +18,9 @@ Eles se encontram na pasta /javascript/src.
 
 ![image](https://github.com/user-attachments/assets/4a5d476a-ad20-4a5c-aee8-794feb7c4ff8)
 
+Os relatórios de execução se encontram na pasta raiz do projeto.
+![image](https://github.com/user-attachments/assets/d06464b5-a326-4ba1-8308-d546fef38070)
+
 
 ## Pré-requisitos
 Pré-requisitos instalados antes de executar os testes:

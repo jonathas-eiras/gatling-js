@@ -28,8 +28,9 @@ jobs:
 
       - name: Run Gatling load test
         run: |
+          cd ./javascript
           npm run build
-          node ./javascript/src/purchaseTicket-load.js
+          node /src/purchaseTicket-load.js
 
       - name: Archive Gatling results
         if: success() || failure()

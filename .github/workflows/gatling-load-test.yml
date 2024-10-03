@@ -22,12 +22,14 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: 
+          cd ./javascript
+          npm install
 
       - name: Run Gatling load test
         run: |
           npm run build
-          node ./javascript/purchaseTicket-load.js
+          node ./javascript/src/purchaseTicket-load.js
 
       - name: Archive Gatling results
         if: success() || failure()

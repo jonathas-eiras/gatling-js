@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
       - name: Install dependencies
         run: |
@@ -30,13 +30,13 @@ jobs:
         run: |
           cd ./javascript
           npm run build
-          node ./src/purchaseTicket-load.gatling.js
+          node ./src/purchaseTicket-load.js
 
       - name: Archive Gatling results
-        if: success() || failure()
+        if: always()
         run: |
           mkdir -p reports
-          cp -R results/ reports/
+          cp -R ./javascript/results/* reports/
         continue-on-error: true
 
       - name: Upload reports

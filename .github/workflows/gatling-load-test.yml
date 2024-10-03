@@ -30,6 +30,13 @@ jobs:
         run: |
           cd ./javascript
           npx gatling run --simulation purchaseTicket-load
+        continue-on-error: true
+
+      - name: Run Gatling spike test
+        run: |
+          cd ./javascript
+          npx gatling run --simulation purchaseTicket-spike
+        continue-on-error: true
 
       - name: Archive Gatling results
         if: always()

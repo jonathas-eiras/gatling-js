@@ -42,7 +42,7 @@ jobs:
         if: always()
         run: |
           mkdir -p reports
-          cp -R ./javascript/results/* reports/
+          cp -R ./javascript/target/gatling/* reports/
         continue-on-error: true
 
       - name: Upload reports
